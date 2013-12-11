@@ -1,35 +1,36 @@
-Vagrant's Ubuntu 12.04 Desktop Environment for Windows
+Vagrant's Linux Desktop Environment for Windows &amp; Mac
 =
 
-## Overview
+By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) | [vDevices](http://vdevices.com/)
 
-Many unsatisfied Windows users find themselves yearning for more. Yet, they don't have the cash flow to pick up a Linux box or the technical expertise to create a partition on their local hard drive, from which to boot an Ubuntu Desktop environment. Well, ladies 'n gentlemen ... drum roll, please ...
+### Introduction
+
+Many unsatisfied Windows users find themselves yearning for more. Some Mac OS X users develop an itch for tinkering with open source tools. Yet, they either (i) don't have the cash flow to pick up a Linux box or (ii) the technical expertise to create a dual boot environment &ndash; that is, a partition on their local hard drive, from which to boot an Ubuntu Desktop environment. Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Purpose
 
-To provide a simple way for Windows users to create a Linux sandbox on their local machine.
+To provide a simple way for Windows &amp; Mac users to create a Linux sandbox on their local machine.
 
-### What is Vagrant?
+## Meet Vagrant
 
-[Vagrant](http://www.vagrantup.com) is a "tool for building and distributing development environments". It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
+[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing development environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
 
 ## How to Use
 
 1. Start with any operating system ("OS").
 
 	>If you are new to the wonderful world of `git` (version control) &ndash; or are uncomfortable with the command line &ndash; it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
-
 2. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
 3. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
-4. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html).
+4. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
     * `vagrant` will now be available as a command in your terminal, try it out.
     * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
-5. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory
+5. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory, e.g.
     * `git clone git://github.com/vDevices/Vagrant-UbuntuDesktop.git vagrant-ubuntu-desktop`
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-UbuntuDesktop/archive/master.zip)
 6. Change into the new directory with `cd vagrant-ubuntu-desktop`
 
-	#### The First `Vagrant Up`
+	#### The First `vagrant up`
 
 7. Start the Vagrant environment with `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
@@ -71,7 +72,7 @@ Now that you're up and running, start poking around and modifying things.
 
 ## Credits
 
-A HUGE `Thank You` is in order to:
+A HUGE **Thank You** is in order to:
 
-* [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); and
-* The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work &ndash; have created a roadmap for launching a local-development environment off the ground.
+* [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); _and_
+* The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work &ndash; have created a roadmap for launching _any_ local-development environment off the ground.
