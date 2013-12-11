@@ -17,7 +17,7 @@ To provide a simple way for Windows users to create a Linux sandbox on their loc
 
 1. Start with any operating system.
 
-	>If you are new to the wonderful world of `git` (version control), it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
+	>If you are new to the wonderful world of `git` (version control) &ndash; or are uncomfortable with the command line &ndash; it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 
 2\. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 3\. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
