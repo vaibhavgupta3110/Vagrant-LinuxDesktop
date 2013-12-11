@@ -3,13 +3,17 @@ Vagrant's Ubuntu 12.04 Desktop Environment for Windows
 
 ## Overview
 
-### The Purpose of Vagrant's Ubuntu 12.04 Desktop Environment for Windows
+## Purpose
 
-### How to Use
+## How to Use
 
-### The Future of Vagrant's Ubuntu 12.04 Desktop Environment for Windows
+## The Future of `Vagrant's Ubuntu 12.04 Desktop Environment for Windows`
+
+It'd be cool to build on this to include possible desktop environments for other Linux Distros, e.g. Fedora.
 
 Immediate goals include:
+
+Getting this sucker up 'n running without a hitch.
 
 ## Getting Started
 
@@ -17,7 +21,7 @@ Immediate goals include:
 
 [Vagrant](http://www.vagrantup.com) is a "tool for building and distributing development environments". It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
 
-### The First Vagrant Up
+### The First `Vagrant Up`
 
 1. Start with any operating system.
 1. Install [VirtualBox 4.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_4_2) or [VirtualBox 4.3.4](https://www.virtualbox.org/wiki/Downloads)
@@ -25,18 +29,18 @@ Immediate goals include:
     * `vagrant` will now be available as a command in your terminal, try it out.
     * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
     * ***Note:*** If VirtualBox 4.3.x is installed, Vagrant 1.3.5 or later is required.
-1. Clone or extract the Varying Vagrant Vagrants project into a local directory
-    * `git clone git://github.com/10up/varying-vagrant-vagrants.git vagrant-local`
-    * OR download and extract the repository master [zip file](https://github.com/10up/varying-vagrant-vagrants/archive/master.zip)
-    * OR grab a [stable release](https://github.com/10up/varying-vagrant-vagrants/releases) if you'd like some extra comfort.
-1. Change into the new directory with `cd vagrant-local`
+1. Clone or extract the `Vagrant's Ubuntu 12.04 Desktop Environment for Windows` project into a local directory
+    * `git clone git://github.com/vDevices/Vagrant-UbuntuDesktop.git vagrant-ubuntu-desktop`
+    * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-UbuntuDesktop/archive/master.zip)
+1. Change into the new directory with `cd vagrant-ubuntu-desktop`
 1. Start the Vagrant environment with `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
+
 ### What Did That Do?
 
-The first time you run `vagrant up`, a packaged box containing a basic virtual machine is downloaded to your local machine and cached for future use. The file used by Varying Vagrant Vagrants contains an installation of Ubuntu 12.04 and is about 280MB.
+The first time you run `vagrant up`, a packaged box containing a basic virtual machine is downloaded to your local machine and cached for future use. The file used by `Vagrant's Ubuntu 12.04 Desktop Environment for Windows` contains an installation of Ubuntu 12.04.
 
-After this box is downloaded, it begins to boot as a sandboxed virtual machine using VirtualBox. Once booted, it runs the provisioning script included with VVV. This initiates the download and installation of around 100MB of packages on the new virtual machine.
+After this box is downloaded, it begins to boot as a sandboxed virtual machine using VirtualBox. Once booted, it runs the included provisioning script, to install the Ubuntu desktop environment.
 
 The time for all of this to happen depends a lot on the speed of your Internet connection. If you are on a fast cable connection, it will likely only take several minutes.
 
@@ -57,9 +61,15 @@ Now that you're up and running, start poking around and modifying things.
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
 1. Reapply provisioning to a running box with `vagrant provision`.
-1. Start modifying and adding local files to fit your needs. Take a look at [Auto Site Setup](https://github.com/10up/varying-vagrant-vagrants/wiki/Auto-site-Setup) for tips on adding new projects.
 
-### Need Help?
+## Need Help?
 
-* Let us have it! Don't hesitate to open a new issue on GitHub if you run into trouble or have any tips that we need to know.
-* There is a [Mailing list](https://groups.google.com/forum/#!forum/wordpress-and-vagrant) for any topic related to WordPress and Vagrant that is a great place to get started.
+* Open a new [Issue](https://github.com/vDevices/Vagrant-UbuntuDesktop/issues) on GitHub if you run into trouble or have any suggestions.
+* Vagrant has a [Mailing List](https://groups.google.com/forum/#!forum/vagrant-up) for any topic related to Vagrant (that is a great place to get started).
+
+## Credits
+
+A HUGE `Thank You` is in order to:
+
+* [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); and
+* The trailblazers at the successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants)
