@@ -6,7 +6,7 @@
 # primary provisioning script on the first `vagrant up` or subsequent 'up' with
 # the '--provision' flag; also when `vagrant provision`, or `vagrant reload --provision`
 # are used. It provides all of the default packages and configurations included
-# with Vagrant Ubuntu Desktop Environment for Windows. You can also bring up your
+# with Vagrant's Ubuntu 12.04 Desktop Environment for Windows. You can also bring up your
 # environment and explicitly not run provisioners by specifying '--no-provision'.
 
 # By storing the date now, we can calculate the duration of provisioning at the
@@ -23,9 +23,9 @@ if [[ $ping_result != *bytes?from* ]]; then
         ping_result="$(ping -c 2 4.2.2.2 2>&1)"
 fi
 
-apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove
+apt-get update && apt-get -y upgrade && apt-get -y autoremove
 
-apt-get install -y ubuntu-desktop xfce4 xfce4-goodies
+#apt-get install -y ubuntu-desktop xfce4 xfce4-goodies
 
 end_seconds="$(date +%s)"
 echo "-----------------------------"
