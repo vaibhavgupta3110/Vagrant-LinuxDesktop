@@ -2,10 +2,12 @@
 #
 # bootstrap.sh
 #
-# This file is specified in Vagrantfile and is loaded by Vagrant as the primary
-# provisioning script whenever the commands `vagrant up`, `vagrant provision`,
-# or `vagrant reload` are used. It provides all of the default packages and
-# configurations included with Varying Vagrant Vagrants.
+# This file is specified in the Vagrantfile and is loaded by Vagrant as the
+# primary provisioning script on the first `vagrant up` or subsequent 'up' with
+# the '--provision' flag; also when `vagrant provision`, or `vagrant reload --provision`
+# are used. It provides all of the default packages and configurations included
+# with Vagrant Ubuntu Desktop Environment for Windows. You can also bring up your
+# environment and explicitly not run provisioners by specifying '--no-provision'.
 
 # By storing the date now, we can calculate the duration of provisioning at the
 # end of this script.
