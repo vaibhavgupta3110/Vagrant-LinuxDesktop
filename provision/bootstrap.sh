@@ -21,6 +21,10 @@ if [[ $ping_result != *bytes?from* ]]; then
         ping_result="$(ping -c 2 4.2.2.2 2>&1)"
 fi
 
+apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove
+
+apt-get install -y ubuntu-desktop xfce4 xfce4-goodies
+
 end_seconds="$(date +%s)"
 echo "-----------------------------"
 echo "Provisioning complete in "$(expr $end_seconds - $start_seconds)" seconds"
