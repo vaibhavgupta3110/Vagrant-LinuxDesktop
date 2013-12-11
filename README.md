@@ -17,21 +17,21 @@ To provide a simple way for Windows users to create a Linux sandbox on their loc
 
 1. Start with any operating system.
 
->If you are new to the wonderful world of `git` (version control), it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
+	>If you are new to the wonderful world of `git` (version control), it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 
-1. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-1. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
-1. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html)
+2\. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+3\. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
+4\. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html)
     * `vagrant` will now be available as a command in your terminal, try it out.
     * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
-1. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory
+5\. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory
     * `git clone git://github.com/vDevices/Vagrant-UbuntuDesktop.git vagrant-ubuntu-desktop`
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-UbuntuDesktop/archive/master.zip)
-1. Change into the new directory with `cd vagrant-ubuntu-desktop`
+6\. Change into the new directory with `cd vagrant-ubuntu-desktop`
 
 #### The First `Vagrant Up`
 
-1. Start the Vagrant environment with `vagrant up`
+7\. Start the Vagrant environment with `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
 
 ### What Did That Do?
