@@ -3,17 +3,22 @@ Vagrant's Linux Desktop Environment for Windows &amp; Mac
 
 By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) | [vDevices](http://vdevices.com/)
 
-### Introduction
-
-Many unsatisfied Windows users find themselves yearning for more. Some Mac OS X users develop an itch for tinkering with open source tools. Yet, they either (i) don't have the cash flow to pick up a Linux box or (ii) the technical expertise to create a dual boot environment &ndash; that is, a partition on their local hard drive, from which to boot an Ubuntu Desktop environment. Well, ladies 'n gentlemen ... drum roll, please ...
-
-## Purpose
+### This Project's Purpose
 
 To provide a simple way for Windows &amp; Mac users to create a Linux sandbox on their local machine.
 
+## Introduction
+
+For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open source tools. Namely, they:
+
+* didn't have the cash-flow to pick up a Linux box; or
+* the technical expertise to create a dual boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
+
+Well, ladies 'n gentlemen ... drum roll, please ...
+
 ## Meet Vagrant
 
-[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing development environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
+[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
 
 ## How to Use
 
@@ -26,9 +31,9 @@ To provide a simple way for Windows &amp; Mac users to create a Linux sandbox on
     * `vagrant` will now be available as a command in your terminal, try it out.
     * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
 5. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory, e.g.
-    * `git clone git://github.com/vDevices/Vagrant-UbuntuDesktop.git vagrant-ubuntu-desktop`
-    * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-UbuntuDesktop/archive/master.zip)
-6. Change into the new directory with `cd vagrant-ubuntu-desktop`
+    * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git linux-desktop`
+    * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
+6. Change into the new directory with `cd linux-desktop`
 
 	#### The First `vagrant up`
 
@@ -53,7 +58,7 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 
 Now that you're up and running, start poking around and modifying things.
 
-1. Access the server via the command line with `vagrant ssh` from your `vagrant-ubuntu-desktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
+1. Access the server via the command line with `vagrant ssh` from your `linux-desktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
     * **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately.
 1. Destroy the box and start from scratch with `vagrant destroy`
     * As explained before, the initial 280MB box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
@@ -64,7 +69,7 @@ Now that you're up and running, start poking around and modifying things.
 ## Need Help?
 
 * Read the Vagrant [Docs](http://docs.vagrantup.com/v2/) (while boring, that is a great place to get started).
-* Open an [Issue](https://github.com/vDevices/Vagrant-UbuntuDesktop/issues) on GitHub if you run into trouble or have any suggestions.
+* Open an [Issue](https://github.com/vDevices/Vagrant-LinuxDesktop/issues) on GitHub if you run into trouble or have any suggestions.
 
 	>For more information on GitHub's Issue Tracker, consult [Issues 2.0: The Next Generation | GitHub Blog](https://github.com/blog/831-issues-2-0-the-next-generation).
 
