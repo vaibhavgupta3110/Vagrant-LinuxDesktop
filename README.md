@@ -59,9 +59,9 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 Now that you're up and running, start poking around and modifying things.
 
 1. Access the server via the command line with `vagrant ssh` from your `linux-desktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
-    * **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately.
+	* **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately.
 1. Destroy the box and start from scratch with `vagrant destroy`
-    * As explained before, the initial 280MB box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
+	* As explained before, the initial 280MB box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
 1. Reapply provisioning to a running box with `vagrant provision`.
@@ -81,3 +81,7 @@ A HUGE **Thank You** is in order to:
 
 * [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); _and_
 * The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work &ndash; have created a roadmap for launching _any_ local-development environment off the ground.
+
+## Additional Resources
+
+* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes.html) people have been nice enough to make publicly available)
