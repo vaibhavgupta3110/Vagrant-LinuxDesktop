@@ -3,36 +3,32 @@ Vagrant's Ubuntu 12.04 Desktop Environment for Windows
 
 ## Overview
 
+Many unsatisfied Windows users find themselves yearning for more. Yet, they don't have the cash flow to pick up a Linux box or the technical expertise to create a partition on their local hard drive, from which to boot an Ubuntu Desktop environment. Well, ladies 'n gentlemen ... drum roll, please ...
+
 ## Purpose
 
-## How to Use
-
-## The Future of `Vagrant's Ubuntu 12.04 Desktop Environment for Windows`
-
-It'd be cool to build on this to include possible desktop environments for other Linux Distros, e.g. Fedora.
-
-Immediate goals include:
-
-Getting this sucker up 'n running without a hitch.
-
-## Getting Started
+To provide a simple way for Windows users to create a Linux sandbox on their local machine.
 
 ### What is Vagrant?
 
 [Vagrant](http://www.vagrantup.com) is a "tool for building and distributing development environments". It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
 
-### The First `Vagrant Up`
+## How to Use
 
 1. Start with any operating system.
-1. Install [VirtualBox 4.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_4_2) or [VirtualBox 4.3.4](https://www.virtualbox.org/wiki/Downloads)
-1. Install [Vagrant 1.4.0](http://www.vagrantup.com/downloads.html)
+>If you are new to the wonderful world of `git` (version control), it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
+1. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+1. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
+1. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html)
     * `vagrant` will now be available as a command in your terminal, try it out.
     * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
-    * ***Note:*** If VirtualBox 4.3.x is installed, Vagrant 1.3.5 or later is required.
-1. Clone or extract the `Vagrant's Ubuntu 12.04 Desktop Environment for Windows` project into a local directory
+1. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory
     * `git clone git://github.com/vDevices/Vagrant-UbuntuDesktop.git vagrant-ubuntu-desktop`
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-UbuntuDesktop/archive/master.zip)
 1. Change into the new directory with `cd vagrant-ubuntu-desktop`
+
+#### The First `Vagrant Up`
+
 1. Start the Vagrant environment with `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
 
