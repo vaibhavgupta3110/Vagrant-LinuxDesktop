@@ -15,12 +15,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Default Ubuntu Box
   #
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "ubuntu"
   #
   # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  # doesn't already exist on the user's system. Sources of other Vagrant
+  # boxes are provided in this Project's README.
   #
+  # 32-bit Ubuntu 13.10 Saucy Salamander
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-i386-vagrant-disk1.box"
+  #
+  # 64-bit Ubuntu 13.10 Saucy Salamander
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.hostname = "ubuntu"
 
   # Forward Agent
