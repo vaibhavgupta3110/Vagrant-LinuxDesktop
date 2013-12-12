@@ -38,17 +38,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # VirtualBox-specific configuration, to fine-tune various options.
   #
   config.vm.provider :virtualbox do |vb|
-  # Don't boot with headless mode
+  # Boot with graphical user interface ("GUI")
     vb.gui = true
-  # You may have to comment out or tinker with the values of some of
-  # these customizations to suit the needs/limits of your local machine
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.customize ["modifyvm", :id, "--cpus", "2"]
-    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+  #
+  # You may have to comment out or tinker with the values of some of the
+  # customizations, below, to suit the needs/limits of your local machine
+  # For a 32-bit VM
+    vb.customize ["modifyvm", :id, "--memory", "1048"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
-    vb.customize ["modifyvm", :id, "--ioapic", "on"]
-    vb.customize ["modifyvm", :id, "--vram", "128"]
-    vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+    vb.customize ["modifyvm", :id, "--vram", "64"]
+  #
+  # For a 64-bit VM
+  # vb.customize ["modifyvm", :id, "--memory", "2048"]
+  # vb.customize ["modifyvm", :id, "--cpus", "2"]
+  # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+  # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+  # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+  # vb.customize ["modifyvm", :id, "--vram", "128"]
+  # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
   #
   # View the documentation for the provider you're using for more
   # information on available options.
