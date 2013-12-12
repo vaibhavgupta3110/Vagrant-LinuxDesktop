@@ -7,53 +7,57 @@ By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) |
 
 To provide a simple way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
 
+### Contributing
+
+Contributions are more than welcome. Please submit [Pull Requests](https://github.com/vDevices/Vagrant-LinuxDesktop/pulls) against the master branch. For more information on the topic of Pull Requests, consult the [GitHub Help](https://help.github.com/) section on [Collaborating](https://help.github.com/categories/63/articles).
+
 ## Introduction
 
-For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open source tools. Namely, they didn't have:
+For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they didn't have:
 
-* the cash-flow or desire to pick up a Linux box; or
+* the cash-flow or desire to pick up a dedicated Linux box; or
 * the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
 
 Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Meet Vagrant
 
-[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
+[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine (on your local Mac or Windows PC) that is sandboxed away from your local environment.
 
 ## Meet VirtualBox
 
-VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system as an application &ndash; such as your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox (with Vagrant) can be used to run a virtual Linux computer on your Windows or Mac computer.
+VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox (with Vagrant) can be used to run a virtual Linux computer on your Windows or Mac computer.
 
-Other possible VirtualBox configurations (although, outside the scope of this project are):
+Other possible VirtualBox configurations (although, outside the scope of this project) are:
 
 * Run a Windows 7, or Windows XP, VM on a Windows 8 machine;
 * Run Max OS X on Windows;
-* Run the Windows programs and, consequently the Windows OS, on a Mac;
+* Run Windows programs and, consequently, the Windows OS, on a Mac;
 * And more!
 
 ## How to Use
 
 1. Start with any operating system ("OS").
-
-	>If you are new to the wonderful world of `git` (version control) &ndash; or are uncomfortable with the command line &ndash; it's advisable to download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
+	>If you are new to the wonderful world of `git` (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 2. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
 3. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
 4. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
-    * `vagrant` will now be available as a command in your terminal, try it out.
-    * ***Note:*** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider upgrading if a much older version is in use.
-5. Clone or extract the _Vagrant's Ubuntu 12.04 Desktop Environment for Windows_ project into a local directory, e.g.
+    * `vagrant` will now be available as a command in your command prompt or terminal.
+    * **Note:** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider [upgrading](http://docs.vagrantup.com/v2/installation/upgrading.html) if a much older version is in use.
+5. Clone or extract the project's repository into a local directory, e.g.
     * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git linux-desktop`
+    * OR use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the ![Clone in Desktop](http://i.imgur.com/JwOZuXk.png) button;
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
 6. Change into the new directory with `cd linux-desktop`
 
 	#### The First `vagrant up`
 
-7. Start the Vagrant environment with `vagrant up`
+7. Start the Vagrant environment by executing the command: `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
 
 ### What Did That Do?
 
-The first time you run `vagrant up`, a packaged box containing a basic virtual machine is downloaded to your local machine and cached for future use. The file used by `Vagrant's Ubuntu 12.04 Desktop Environment for Windows` contains an installation of Ubuntu 12.04.
+The first time you run `vagrant up`, a packaged box  from the [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/) repository, containing a basic virtual machine, is downloaded to your local computer and cached for future use. The default `Vagrantfile` used by `Vagrant's Linux Desktop Environment for Windows & Mac` contains an installation of `Ubuntu 13.10 32-bit`.
 
 After this box is downloaded, it begins to boot as a sandboxed virtual machine using VirtualBox. Once booted, it runs the included provisioning script, to install the Ubuntu desktop environment.
 
