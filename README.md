@@ -22,11 +22,11 @@ Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Meet Vagrant
 
-[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine (on your local Mac or Windows PC) that is sandboxed away from your local environment.
+[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine (on your local Mac or Windows PC) that is sandboxed, or sectioned-off, from your local environment.
 
 ## Meet VirtualBox
 
-VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox (with Vagrant) can be used to run a virtual Linux computer on your Windows or Mac computer.
+VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system ("OS") as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest OSs, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox can be used to run a virtual Linux computer on your Windows or Mac computer. Vagrant saves you the trouble of having to build a Guest OS from scratch; by simply downloading a pre-packaged virtual machine running a particular Guest OS, named a [vagrant box](http://docs.vagrantup.com/v2/boxes.html). 
 
 Other possible VirtualBox configurations (although, outside the scope of this project) are:
 
