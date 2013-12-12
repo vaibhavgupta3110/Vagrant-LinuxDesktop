@@ -5,20 +5,31 @@ By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) |
 
 ### This Project's Purpose
 
-To provide a simple way for Windows &amp; Mac users to create a Linux sandbox on their local machine.
+To provide a simple way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
 
 ## Introduction
 
-For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open source tools. Namely, they:
+For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open source tools. Namely, they didn't have:
 
-* didn't have the cash-flow to pick up a Linux box; or
-* the technical expertise to create a dual boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
+* the cash-flow or desire to pick up a Linux box; or
+* the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
 
 Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Meet Vagrant
 
 [Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine that is sandboxed away from your local environment.
+
+## Meet VirtualBox
+
+VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system as an application &ndash; such as your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest operating systems, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox (with Vagrant) can be used to run a virtual Linux computer on your Windows or Mac computer.
+
+Other possible VirtualBox configurations (although, outside the scope of this project are):
+
+* Run a Windows 7, or Windows XP, VM on a Windows 8 machine;
+* Run Max OS X on Windows;
+* Run the Windows programs and, consequently the Windows OS, on a Mac;
+* And more!
 
 ## How to Use
 
@@ -80,8 +91,9 @@ Now that you're up and running, start poking around and modifying things.
 A HUGE **Thank You** is in order to:
 
 * [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); _and_
-* The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work &ndash; have created a roadmap for launching _any_ local-development environment off the ground.
+* The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work on local WordPress development &ndash; have, in the process, created a roadmap for launching _any_ local-development environment off the ground.
 
 ## Additional Resources
 
-* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes.html) people have been nice enough to make publicly available)
+* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run on cloud-platforms  or in local virtualizaition environments such as Vagrant).
+* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes.html) people have been nice enough to make publicly available).
