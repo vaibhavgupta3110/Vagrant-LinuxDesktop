@@ -25,7 +25,7 @@ fi
 
 apt-get update && apt-get -y upgrade && apt-get -y autoremove
 
-#apt-get install -y ubuntu-desktop xfce4 xfce4-goodies
+apt-get install -y ubuntu-desktop
 
 end_seconds="$(date +%s)"
 echo "-----------------------------"
