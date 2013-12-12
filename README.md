@@ -26,9 +26,9 @@ Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Meet VirtualBox
 
-VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing host operating system ("OS") as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows additional guest OSs, each known as a Guest OS, to be loaded and run, each with its own virtual environment. Thus, VirtualBox can be used to run a virtual Linux computer on your Windows or Mac computer. Vagrant saves you the trouble of having to build a Guest OS from scratch; by simply downloading a pre-packaged virtual machine running a particular Guest OS, named a [vagrant box](http://docs.vagrantup.com/v2/boxes.html). 
+VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing **host** operating system ("OS") as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows an additional **guest** OS to be loaded and run, within its own virtual environment.
 
-Other possible VirtualBox configurations (although, outside the scope of this project) are:
+Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Windows PC. While Vagrant saves you the trouble of having to build a guest OS from scratch; by simply downloading a pre-packaged virtual machine running a particular guest OS, named a [vagrant box](http://docs.vagrantup.com/v2/boxes.html). Other possible VirtualBox configurations (although, outside the scope of this project) are:
 
 * Run a Windows 7, or Windows XP, VM on a Windows 8 machine;
 * Run Max OS X on Windows;
@@ -38,21 +38,27 @@ Other possible VirtualBox configurations (although, outside the scope of this pr
 ## How to Use
 
 1. Start with any operating system ("OS").
+
 	>If you are new to the wonderful world of `git` (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 2. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
-3. Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
-4. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
+	>Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
+3. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
     * `vagrant` will now be available as a command in your command prompt or terminal.
+		* **Microsoft Windows users:** Can open a command prompt by pressing, on their keyboard, the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
+
+				cmd
+
+			and pressing `Enter`. 
     * **Note:** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider [upgrading](http://docs.vagrantup.com/v2/installation/upgrading.html) if a much older version is in use.
-5. Clone or extract the project's repository into a local directory, e.g.
-    * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git linux-desktop`
-    * OR use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the ![Clone in Desktop](http://i.imgur.com/JwOZuXk.png) button;
+4. Clone or extract the project's repository into a local directory, e.g.
+    * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git Vagrant-LinuxDesktop`
+    * OR use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the `Clone in Desktop` button;
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
-6. Change into the new directory with `cd linux-desktop`
+5. Change into the new directory with `cd Vagrant-LinuxDesktop`
 
 	#### The First `vagrant up`
 
-7. Start the Vagrant environment by executing the command: `vagrant up`
+6. Start the Vagrant environment by executing the command: `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
 
 ### What Did That Do?
@@ -73,7 +79,7 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 
 Now that you're up and running, start poking around and modifying things.
 
-1. Access the server via the command line with `vagrant ssh` from your `linux-desktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
+1. Access the server via the command line with `vagrant ssh` from your `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
 	* **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately.
 1. Destroy the box and start from scratch with `vagrant destroy`
 	* As explained before, the initial 280MB box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
