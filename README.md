@@ -9,13 +9,21 @@ To provide a simple way for Windows &amp; Mac users to launch a virtual machine 
 
 ### Contributing
 
-Contributions are more than welcome. Please submit [Pull Requests](https://github.com/vDevices/Vagrant-LinuxDesktop/pulls) against the master branch. For more information on the topic of Pull Requests, consult the [GitHub Help](https://help.github.com/) section on [Collaborating](https://help.github.com/categories/63/articles).
+Contributions are more than welcome:
+
+1. Fork this repo. *See* [Fork A Repo | GitHub Help](https://help.github.com/articles/fork-a-repo).
+2. Create a branch (`git checkout -b my_feature_branch`).
+3. Commit your changes (`git commit -am "Added a sweet feature"`).
+4. Push to the branch (`git push origin my_feature_branch`).
+5. Create a Pull Request from your branch into the master branch of this repo (please be sure to provide enough detail, so I can decipher your proposed changes). *See* [Collaborating | GitHub Help](https://help.github.com/categories/63/articles).
+
+>If you are new to the wonderful world of [git](http://git-scm.com/) (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 
 ## Introduction
 
 For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they didn't have:
 
-* the cash-flow or desire to pick up a dedicated Linux box; or
+* the cash-flow or desire to pick up a dedicated Linux box; _or_
 * the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
 
 Well, ladies 'n gentlemen ... drum roll, please ...
@@ -38,13 +46,11 @@ Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Wind
 ## How to Use
 
 1. Start with any operating system ("OS").
-
-	>If you are new to the wonderful world of `git` (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 2. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
 	>Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
 3. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
-    * `vagrant` will now be available as a command in your command prompt or terminal.
-		* **Microsoft Windows users:** Can open a command prompt by pressing, on their keyboard, the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
+	* `vagrant` will now be available as a command in your command prompt or terminal.
+		* **Microsoft Windows users:** Can open a command prompt by pressing (on their keyboard) the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
 
 				cmd
 
@@ -79,7 +85,7 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 
 Now that you're up and running, start poking around and modifying things.
 
-1. Access the server via the command line with `vagrant ssh` from your `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
+1. Access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
 	* **MS Windows users:** Unfortunately, an SSH client is generally not distributed with Windows PCs, by default. A terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html), however, will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
 1. Destroy the box and start from scratch with `vagrant destroy`
 	* As previously explained, the initial Ubuntu `vagrant box` file will be cached on your machine; and a subsequent `vagrant up` command will re-initiate the complete provisioning process.
@@ -90,11 +96,9 @@ Now that you're up and running, start poking around and modifying things.
 ## Need Help?
 
 * Read the Vagrant [Docs](http://docs.vagrantup.com/v2/) (while boring, that is a great place to get started).
-* Open an [Issue](https://github.com/vDevices/Vagrant-LinuxDesktop/issues) on GitHub if you run into trouble or have any suggestions.
-
-	>For more information on GitHub's Issue Tracker, consult [Issues 2.0: The Next Generation | GitHub Blog](https://github.com/blog/831-issues-2-0-the-next-generation).
-
 * Vagrant has a [Mailing List](https://groups.google.com/forum/#!forum/vagrant-up) for any topic related to Vagrant.
+* Open an [Issue](https://github.com/vDevices/Vagrant-LinuxDesktop/issues) on GitHub if you run into trouble or have any suggestions.
+	>For more information on GitHub's issue-tracking system, consult [Issues 2.0: The Next Generation | GitHub Blog](https://github.com/blog/831-issues-2-0-the-next-generation).
 
 ## Credits
 
@@ -106,4 +110,7 @@ A HUGE **Thank You** is in order to:
 ## Additional Resources
 
 * [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run on cloud-platforms  or in local virtualizaition environments such as Vagrant).
+* Official Vagrant Boxes
+	* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
+	* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
 * [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes.html) people have been nice enough to make publicly available).
