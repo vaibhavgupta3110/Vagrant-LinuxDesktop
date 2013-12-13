@@ -21,7 +21,7 @@ Contributions are more than welcome:
 
 ## Introduction
 
-For many years, there were barriers surrounding the many unsatisfied Windows users finding themselves yearning for more and Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they didn't have:
+For many years, there were barriers surrounding the many unsatisfied Microsoft Windows users yearning for more and some Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they didn't have:
 
 * the cash-flow or desire to pick up a dedicated Linux box; _or_
 * the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
@@ -109,8 +109,14 @@ A HUGE **Thank You** is in order to:
 
 ## Additional Resources
 
-* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run on cloud-platforms  or in local virtualizaition environments such as Vagrant).
+#### `vagrant box`
+
+One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
+
+An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL to any of the following VM, or guest OS, images. 
+
+* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in local virtualizaition environments such as Vagrant).
 * Official Vagrant Boxes
 	* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
 	* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
-* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes.html) people have been nice enough to make publicly available).
+* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
