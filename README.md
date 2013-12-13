@@ -80,9 +80,9 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 Now that you're up and running, start poking around and modifying things.
 
 1. Access the server via the command line with `vagrant ssh` from your `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
-	* **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately.
+	* **Note:** Unfortunately, an SSH client is generally not distributed with Windows, by default. A terminal-emulator program such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
 1. Destroy the box and start from scratch with `vagrant destroy`
-	* As explained before, the initial 280MB box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
+	* As explained before, the initial Ubuntu box file will be cached on your machine. the next `vagrant up` command will initiate the complete provisioning process again.
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
 1. Reapply provisioning to a running box with `vagrant provision`.
