@@ -44,18 +44,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You may have to comment out or tinker with the values of some of the
   # customizations, below, to suit the needs/limits of your local machine
   # For a 32-bit VM
-    vb.customize ["modifyvm", :id, "--memory", "1048"]
+    # Set the amount of RAM, in MB, that the VM should allocate for itself from the host
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    # Set the amount of RAM that the virtual graphics card should have
+    vb.customize ["modifyvm", :id, "--vram", "96"]
+    # Enable, if the Guest Additions are installed, whether hardware 3D acceleration should be available
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
-    vb.customize ["modifyvm", :id, "--vram", "64"]
+    # Enable the VM's virtual USB controller
+    vb.customize ["modifyvm", :id, "--usb", "on"]
   #
   # For a 64-bit VM
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
+    # Set the number of virtual CPUs for the virtual machine
   # vb.customize ["modifyvm", :id, "--cpus", "2"]
   # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-  # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   # vb.customize ["modifyvm", :id, "--ioapic", "on"]
   # vb.customize ["modifyvm", :id, "--vram", "128"]
+    # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
   # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+  # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   #
   # View the documentation for the provider you're using for more
   # information on available options.
