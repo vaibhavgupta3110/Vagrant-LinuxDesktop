@@ -50,12 +50,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
     # Set the amount of RAM that the virtual graphics card should have
     vb.customize ["modifyvm", :id, "--vram", "96"]
-    # Enable audio support for the VM
-    vb.customize ["modifyvm", :id, "--audio", "oss"]
-    # Enable the VM's virtual USB controller
-    vb.customize ["modifyvm", :id, "--usb", "on"]
-    # Enable the VM's virtual USB 2.0 controller
-    vb.customize ["modifyvm", :id, "--usbehci", "on"]
+    # Enable audio support for the VM & specify the audio controller
+    vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
+    # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
+    vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
