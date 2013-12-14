@@ -86,9 +86,22 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 Now that you're up and running, start poking around and modifying things.
 
 1. Access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
+
 	* **MS Windows users:** Unfortunately, an SSH client is generally not distributed with Windows PCs, by default. A terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html), however, will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
+
 1. Destroy the box and start from scratch with `vagrant destroy`
+
 	* As previously explained, the initial Ubuntu `vagrant box` file will be cached on your machine; and a subsequent `vagrant up` command will re-initiate the complete provisioning process.
+
+	* One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
+
+		An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL to any of the following VM, or guest OS, images.
+
+		* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in local virtualizaition environments such as Vagrant).
+		* Official Vagrant Boxes
+			* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
+			* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
+		* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
 1. Reapply provisioning to a running box with `vagrant provision`.
@@ -106,17 +119,3 @@ A HUGE **Thank You** is in order to:
 
 * [Portal Stack: Vagrant + VirtualBox + Ubuntu for linux development](http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html) | By [Mike Kunze](https://github.com/mikekunze?tab=repositories) (for planting the seeds for this idea); _and_
 * The trailblazers at the uber-successful [Varying Vagrant Vagrants](https://github.com/10up/varying-vagrant-vagrants), which &ndash; in addition to their great work on local WordPress development &ndash; have, in the process, created a roadmap for launching _any_ local-development environment off the ground.
-
-## Additional Resources
-
-#### `vagrant box`
-
-One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
-
-An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL to any of the following VM, or guest OS, images. 
-
-* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in local virtualizaition environments such as Vagrant).
-* Official Vagrant Boxes
-	* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
-	* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
-* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
