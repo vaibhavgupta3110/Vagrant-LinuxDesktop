@@ -48,8 +48,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # For a 32-bit VM
     # Set the amount of RAM, in MB, that the VM should allocate for itself, from the host
     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    # Allow the VM to display the desktop environment
+    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
     # Set the amount of RAM that the virtual graphics card should have
-    vb.customize ["modifyvm", :id, "--vram", "96"]
+    vb.customize ["modifyvm", :id, "--vram", "128"]
+    # Advanced Programmable Interrupt Controllers (APICs) are a newer x86 hardware feature
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Enable audio support for the VM & specify the audio controller
     vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
@@ -60,9 +64,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Set the number of virtual CPUs for the virtual machine
   # vb.customize ["modifyvm", :id, "--cpus", "2"]
   # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-    # Enable I/O APIC support for the VM
-  # vb.customize ["modifyvm", :id, "--ioapic", "on"]
   # vb.customize ["modifyvm", :id, "--vram", "128"]
+    # Enabling the I/O APIC is required for 64-bit guest operating systems, especially Windows Vista;
+    # it is also required if you want to use more than one virtual CPU in a VM.
+  # vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
   # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
     # Enable, if Guest Additions are installed, whether hardware 3D acceleration should be available
