@@ -12,10 +12,10 @@ To provide a simple way for Windows &amp; Mac users to launch a virtual machine 
 Contributions are more than welcome:
 
 1. Fork this repo. *See* [Fork A Repo | GitHub Help](https://help.github.com/articles/fork-a-repo).
-2. Create a branch (`git checkout -b my_feature_branch`).
-3. Commit your changes (`git commit -am "Added a sweet feature"`).
-4. Push to the branch (`git push origin my_feature_branch`).
-5. Create a Pull Request from your branch into the master branch of this repo (please be sure to provide enough detail, so I can decipher your proposed changes). *See* [Collaborating | GitHub Help](https://help.github.com/categories/63/articles).
+1. Create a branch (`git checkout -b my_feature_branch`).
+1. Commit your changes (`git commit -am "Added a sweet feature"`).
+1. Push to the branch (`git push origin my_feature_branch`).
+1. Create a Pull Request from your branch into the master branch of this repo (please be sure to provide enough detail, so I can decipher your proposed changes). *See* [Collaborating | GitHub Help](https://help.github.com/categories/63/articles).
 
 >If you are new to the wonderful world of [git](http://git-scm.com/) (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
 
@@ -46,9 +46,10 @@ Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Wind
 ## How to Use
 
 1. Start with any operating system ("OS").
-2. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
+1. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
+
 	>Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
-3. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
+1. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
 	* `vagrant` will now be available as a command in your command prompt or terminal.
 		* **Microsoft Windows users:** Can open a command prompt by pressing (on their keyboard) the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
 
@@ -56,15 +57,15 @@ Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Wind
 
 			and pressing `Enter`. 
     * **Note:** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider [upgrading](http://docs.vagrantup.com/v2/installation/upgrading.html) if a much older version is in use.
-4. Clone or extract the project's repository into a local directory, e.g.
+1. Clone or extract the project's repository into a local directory, e.g.
     * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git Vagrant-LinuxDesktop`
     * OR use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the `Clone in Desktop` button;
     * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
-5. Change into the new directory with `cd Vagrant-LinuxDesktop`
+1. Change into the new directory with `cd Vagrant-LinuxDesktop`
 
 	#### The First `vagrant up`
 
-6. Start the Vagrant environment by executing the command: `vagrant up`
+1. Start the Vagrant environment by executing the command: `vagrant up`
     * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
 
 ### What Did That Do?
@@ -85,22 +86,19 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 
 Now that you're up and running, start poking around and modifying things.
 
-1. Access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
-
+1. Your Windows or Mac desktop should now be substituted by a full-screen Linux desktop environment. Log in with the username `vagrant` and password `vagrant`.
+1. You can also access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
 	* **MS Windows users:** Unfortunately, an SSH client is generally not distributed with Windows PCs, by default. A terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html), however, will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
-
-1. Destroy the box and start from scratch with `vagrant destroy`
-
+1. Destroy the box and start from scratch with `vagrant destroy`.
 	* As previously explained, the initial Ubuntu `vagrant box` file will be cached on your machine; and a subsequent `vagrant up` command will re-initiate the complete provisioning process.
-
 	* One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
 
-		An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL to any of the following VM, or guest OS, images.
+		An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL of either of the official Vagrant boxes:
+		* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
+		* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
 
-		* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in local virtualizaition environments such as Vagrant).
-		* Official Vagrant Boxes
-			* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
-			* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
+		or with a `box` URL from either of the following repositories hosting VM, or guest OS, images:
+		* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in the Vagrant local-virtualizaition environment).
 		* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
