@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   # For a 32-bit VM
     # Set the amount of RAM, in MB, that the VM should allocate for itself, from the host
-    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
     # Set the amount of RAM that the virtual graphics card should have
     vb.customize ["modifyvm", :id, "--vram", "96"]
     # Enable audio support for the VM & specify the audio controller
