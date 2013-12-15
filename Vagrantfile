@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You may have to comment out or tinker with the values of some of the
   # customizations, below, to suit the needs/limits of your local machine.
   #
-  # For a 32-bit VM
+  # Optimized for an Ubuntu 13.10 32-bit VM on a host running Windows XP SP3 32-bit
     # Set the amount of RAM, in MB, that the VM should allocate for itself, from the host
     vb.customize ["modifyvm", :id, "--memory", "1024"]
     # Allow the VM to display the desktop environment
