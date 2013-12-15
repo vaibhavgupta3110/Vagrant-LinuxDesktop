@@ -10,9 +10,11 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+  # please see the online documentation at docs.vagrantup.com/v2/.
 
-  # Default Ubuntu Box
+  # Default Ubuntu Box (feel free to (i) comment out the URL for the default
+  # box; and (ii) uncomment the URL for the 64-bit box; or (iii) forego
+  # either of the boxes provided, in favor of your own `vagrant box`).
   #
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu"
@@ -61,9 +63,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
     vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
     # Add IDE controller to the VM, to allow virtual media to be attached to the controller
-    vb.customize ["storagectl", :id, "--name", "IDE", "--add", "ide"]
-    # Give the VM access to the host's CD/DVD drive
-    vb.customize ["storageattach", :id, "--type", "dvddrive"]
+    vb.customize ["storagectl", :id, "--name", "IDE Controller", "--add", "ide"]
+    # Give the VM access to the host's CD/DVD drive, by attaching the medium to the virtual IDE controller
+    vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
@@ -79,8 +81,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Enable, if Guest Additions are installed, whether hardware 3D acceleration should be available
   # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   #
-  # See Chapter 8. VBoxManage | VirtualBox Manual for more
-  # information on available options.
+  # See Chapter 8. VBoxManage | VirtualBox Manual located @ virtualbox.org/manual/ch08.html
+  # for more information on available options.
   end
   
   # Provisioning
