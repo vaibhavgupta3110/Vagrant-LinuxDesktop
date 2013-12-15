@@ -60,6 +60,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
     vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
+    # Add IDE controller to the VM, to allow virtual media to be attached to the controller
+    vb.customize ["storagectl", :id, "--name", "IDE", "--add", "ide"]
     # Give the VM access to the host's CD/DVD drive
     vb.customize ["storageattach", :id, "--type", "dvddrive"]
   #
