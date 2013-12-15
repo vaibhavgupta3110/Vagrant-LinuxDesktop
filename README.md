@@ -43,7 +43,7 @@ Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Wind
 * Run Windows programs and, consequently, the Windows OS, on a Mac;
 * And more!
 
-## How to Use
+## How to Deploy
 
 1. Start with any operating system ("OS").
 1. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
@@ -82,27 +82,31 @@ On future runs of `vagrant up`, the packaged box will be cached on your local ma
 * ***Rare:*** If you would like to reapply the provisioning scripts with `vagrant up --provision` or `vagrant provision`, some time will be taken to check for updates and packages that have not been installed.
 * ***Very Rare:*** If the virtual machine has been destroyed with `vagrant destroy`, it will need to download the full 100MB of package data on the next `vagrant up`.
 
-### Now What?
+## How to Use
 
 Now that you're up and running, start poking around and modifying things.
 
 1. Your Windows or Mac desktop should now be substituted by a full-screen Linux desktop environment. Log in with the username `vagrant` and password `vagrant`.
 1. You can also access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
-	* **MS Windows users:** Unfortunately, an SSH client is generally not distributed with Windows PCs, by default. A terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html), however, will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
-1. Destroy the box and start from scratch with `vagrant destroy`.
-	* As previously explained, the initial Ubuntu `vagrant box` file will be cached on your machine; and a subsequent `vagrant up` command will re-initiate the complete provisioning process.
-	* One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
-
-		An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL of either of the official Vagrant boxes:
-		* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
-		* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
-
-		or with a `box` URL from either of the following repositories hosting VM, or guest OS, images:
-		* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in the Vagrant local-virtualizaition environment).
-		* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
+	* **MS Windows users:** An SSH client is generally not distributed with Windows PCs, by default. However, a terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
 1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
 1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
 1. Reapply provisioning to a running box with `vagrant provision`.
+1. Destroy the box and start from scratch with `vagrant destroy`.
+
+## Vagrant `box`
+
+One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
+
+An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL of either of the official Vagrant boxes:
+
+* **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
+* **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
+
+or with a `box` URL from either of the following repositories hosting VM, or guest OS, images:
+
+* [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/) (pre-installed disk images that have been customized by Ubuntu engineering to run in the Vagrant local-virtualizaition environment).
+* [Vagrantbox.es](http://www.vagrantbox.es/) (a list of Vagrant [boxes](http://docs.vagrantup.com/v2/boxes/base.html) people have been nice enough to make publicly available).
 
 ## Need Help?
 
