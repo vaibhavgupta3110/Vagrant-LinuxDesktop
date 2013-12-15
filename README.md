@@ -111,8 +111,11 @@ or with a `box` URL from either of the following repositories hosting VM, or gue
 ## Need Help?
 
 * Read the Vagrant [Docs](http://docs.vagrantup.com/v2/) (while boring, that is a great place to get started).
+
 * Vagrant has a [Mailing List](https://groups.google.com/forum/#!forum/vagrant-up) for any topic related to Vagrant.
+
 * Open an [Issue](https://github.com/vDevices/Vagrant-LinuxDesktop/issues) on GitHub if you run into trouble or have any suggestions.
+
 	>For more information on GitHub's issue-tracking system, consult [Issues 2.0: The Next Generation | GitHub Blog](https://github.com/blog/831-issues-2-0-the-next-generation).
 
 ## Credits
