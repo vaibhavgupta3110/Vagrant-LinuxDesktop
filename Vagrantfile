@@ -54,10 +54,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--vram", "128"]
     # Advanced Programmable Interrupt Controllers (APICs) are a newer x86 hardware feature
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    # Default host uses a USB mouse instead of PS2
+    vb.customize ["modifyvm", :id, "--mouse", "usb"]
     # Enable audio support for the VM & specify the audio controller
     vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
     vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
+    # Give the VM access to the host's CD/DVD drive
+    vb.customize ["storageattach", :id, "--type", "dvddrive"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
