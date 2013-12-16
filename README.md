@@ -11,20 +11,21 @@ To provide a simple way for Windows &amp; Mac users to launch a virtual machine 
 
 Contributions are more than welcome:
 
+>If you are new to the wonderful world of [git](http://git-scm.com/) (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
+
 1. Fork this repo. *See* [Fork A Repo | GitHub Help](https://help.github.com/articles/fork-a-repo).
 1. Create a branch (`git checkout -b my_feature_branch`).
 1. Commit your changes (`git commit -am "Added a sweet feature"`).
 1. Push to the branch (`git push origin my_feature_branch`).
 1. Create a Pull Request from your branch into the master branch of this repo (please be sure to provide enough detail, so I can decipher your proposed changes). *See* [Collaborating | GitHub Help](https://help.github.com/categories/63/articles).
 
->If you are new to the wonderful world of [git](http://git-scm.com/) (version control) &ndash; and/or are uncomfortable with the command line &ndash; download [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/).
-
 ## Introduction
 
-For many years, there were barriers surrounding the many unsatisfied Microsoft Windows users yearning for more and some Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they didn't have:
+For many years, there were barriers surrounding the many unsatisfied Microsoft Windows users yearning for more and some Mac OS X users that developed an itch for tinkering with open-source tools. Namely, they did not have:
 
 * the cash-flow or desire to pick up a dedicated Linux box; _or_
-* the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive, from which to boot a Linux Desktop environment.
+* the technical expertise to create a dual-boot environment &ndash; that is, a partition on their local hard drive from which to boot a Linux environment, side-by-side with Windows.
+	* Besides, dual-boot environments carry the inconvenience of having to reboot your computer every time you want to work with the other OS (so much for multitasking!).
 
 Well, ladies 'n gentlemen ... drum roll, please ...
 
@@ -34,9 +35,17 @@ Well, ladies 'n gentlemen ... drum roll, please ...
 
 ## Meet VirtualBox
 
-VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed on an existing **host** operating system ("OS") as an application &ndash; such as on your local Windows or Mac computer. VirtualBox, while running as an application on your computer, then allows an additional **guest** OS to be loaded and run, within its own virtual environment.
+VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed _on_ an existing **host** operating system ("OS") &ndash; such as Windows or Mac OS X &ndash; as an application. While running as an application on your computer, VirtualBox then allows a **guest** OS to be loaded and run, within its own virtual environment. Thus, VirtualBox can be used to run a virtual Linux computer _inside_ your Mac or Windows PC, as opposed to next to it (like in a dual-boot configuration).
 
-Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Windows PC. While Vagrant saves you the trouble of having to build a guest OS from scratch; by simply downloading a pre-packaged virtual machine running a particular guest OS, named a [vagrant box](http://docs.vagrantup.com/v2/boxes.html). Other possible VirtualBox configurations (although, outside the scope of this project) are:
+### A Match Made in Heaven
+
+Many users run a guest OS inside of VirtualBox without Vagrant. However,
+
+* Vagrant saves you the trouble of having to build a guest OS from scratch;
+* By simply downloading a pre-packaged virtual machine running a particular guest OS, named a [vagrant box](http://docs.vagrantup.com/v2/boxes.html);
+* While supporting customization via the [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html). The primary function of the Vagrantfile is to describe the type of VM required for a project and how to configure and provision the machine.
+
+Other possible VirtualBox configurations (although, outside the scope of this project) are:
 
 * Run a Windows 7, or Windows XP, VM on a Windows 8 machine;
 * Run Max OS X on Windows;
@@ -46,41 +55,49 @@ Thus, VirtualBox can be used to run a virtual Linux computer on your Mac or Wind
 ## How to Deploy
 
 1. Start with any operating system ("OS").
+
 1. Install the most recent release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads), for your OS.
 
 	>Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
+
 1. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
-	* `vagrant` will now be available as a command in your command prompt or terminal.
-		* **Microsoft Windows users:** Can open a command prompt by pressing (on their keyboard) the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
+	* `vagrant` will now be available as a command in your terminal or Windows Command Prompt.
+		* **Microsoft Windows users:** Can open a command prompt by pressing (on the keyboard) the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
 
 				cmd
 
 			and pressing `Enter`. 
-    * **Note:** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider [upgrading](http://docs.vagrantup.com/v2/installation/upgrading.html) if a much older version is in use.
+    
+	* **Note:** If Vagrant is already installed, use `vagrant -v` to check the version. You may want to consider [upgrading](http://docs.vagrantup.com/v2/installation/upgrading.html) if a much older version is in use.
+
 1. Clone or extract the project's repository into a local directory, e.g.
-    * `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git Vagrant-LinuxDesktop`
-    * OR use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the `Clone in Desktop` button;
-    * OR download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
-1. Change into the new directory with `cd Vagrant-LinuxDesktop`
+
+	* `git clone git://github.com/vDevices/Vagrant-LinuxDesktop.git vagrant-desktop`
+	* **OR** use [GitHub for Windows](http://windows.github.com/) or [GitHub for Mac](http://mac.github.com/) by clicking on the `Clone in Desktop` button
+	* **OR** download and extract the repository master [zip file](https://github.com/vDevices/Vagrant-LinuxDesktop/archive/master.zip)
+
+1. Change into the new directory with `cd vagrant-desktop`
 
 	#### The First `vagrant up`
 
 1. Start the Vagrant environment by executing the command: `vagrant up`
-    * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
+    * Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files &amp; updates.
 
 ### What Did That Do?
 
-The first time you run `vagrant up`, a packaged box  from the [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/) repository, containing a basic virtual machine, is downloaded to your local computer and cached for future use. The default `Vagrantfile` used by `Vagrant's Linux Desktop Environment for Windows & Mac` contains an installation of `Ubuntu 13.10 32-bit`.
+The first time you run `vagrant up`, a packaged `box`  from the [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/) repository, containing a basic virtual machine, is downloaded to your local computer and cached for future use. The default `Vagrantfile` used by `Vagrant's Linux Desktop Environment for Windows & Mac` contains an installation of `Ubuntu 12.04 LTS 32-bit`.
 
-After this box is downloaded, it begins to boot as a sandboxed virtual machine using VirtualBox. Once booted, it runs the included provisioning script, to install the Ubuntu desktop environment.
+After this `box` is downloaded, it begins to boot as a sandboxed virtual machine using VirtualBox. Once booted, it runs the included provisioning script, to install the Ubuntu desktop environment.
+
+* **Note:** Ubuntu's default desktop environment ("DE") is [Unity](http://en.wikipedia.org/wiki/Unity_(user_interface)). Feel free to modify the provisioning script (`bootstrap.sh`), if you would prefer a different DE, such as [GNOME](http://en.wikipedia.org/wiki/GNOME).
 
 The time for all of this to happen depends a lot on the speed of your Internet connection. If you are on a fast cable connection, it will likely only take several minutes.
 
-On future runs of `vagrant up`, the packaged box will be cached on your local machine and Vagrant will only need to apply the requested provisioning.
+On future runs of `vagrant up`, the packaged `box` will be cached on your local machine and Vagrant will again apply the provisioning script, only if specifically requested.
 
 * ***Preferred:*** If the virtual machine has been powered off with `vagrant halt`, `vagrant up` will quickly power on the machine without provisioning.
-* ***Rare:*** If you would like to reapply the provisioning scripts with `vagrant up --provision` or `vagrant provision`, some time will be taken to check for updates and packages that have not been installed.
-* ***Very Rare:*** If the virtual machine has been destroyed with `vagrant destroy`, it will need to download the full 100MB of package data on the next `vagrant up`.
+* ***Rare:*** If you would like to reapply the provisioning script with `vagrant up --provision` or `vagrant provision`, some time will be taken to check for updates and packages that have not been installed.
+* ***Very Rare:*** If the virtual machine has been destroyed with `vagrant destroy`, it will need to download the full package data on the next `vagrant up`.
 
 ## How to Use
 
@@ -89,10 +106,10 @@ Now that you're up and running, start poking around and modifying things.
 1. Your Windows or Mac desktop should now be substituted by a full-screen Linux desktop environment. Log in with the username `vagrant` and password `vagrant`.
 1. You can also access the VM via the command line with the `vagrant ssh` command from your local `Vagrant-LinuxDesktop` directory. You can do almost anything you would do with a standard Ubuntu installation.
 	* **MS Windows users:** An SSH client is generally not distributed with Windows PCs, by default. However, a terminal emulator such as [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) will provide access immediately. For detailed instructions on connecting with PuTTY, consult the [Vagrant-LinuxDesktop wiki](https://github.com/vDevices/Vagrant-LinuxDesktop/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY).
-1. Power off the box with `vagrant halt` and turn it back on with `vagrant up`.
-1. Suspend the box's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
-1. Reapply provisioning to a running box with `vagrant provision`.
-1. Destroy the box and start from scratch with `vagrant destroy`.
+1. Power off the VM with `vagrant halt` and turn it back on with `vagrant up`.
+1. Suspend the VM's state in memory with `vagrant suspend` and bring it right back with `vagrant resume`.
+1. Reapply provisioning to a running VM with `vagrant provision`.
+1. Destroy the VM and start from scratch with `vagrant destroy`.
 
 ## Vagrant `box`
 
