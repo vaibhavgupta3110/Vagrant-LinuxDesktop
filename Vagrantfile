@@ -23,11 +23,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # doesn't already exist on the user's system. Sources of other Vagrant
   # boxes are provided in this Project's README.
   #
-  # 32-bit Ubuntu 13.10 Saucy Salamander
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-i386-vagrant-disk1.box"
+  # 32-bit Ubuntu 12.04 LTS
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
   #
-  # 64-bit Ubuntu 13.10 Saucy Salamander
-  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
+  # 64-bit Ubuntu 12.04 LTS
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.hostname = "ubuntu"
 
   # Forward Agent
@@ -47,25 +47,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You may have to comment out or tinker with the values of some of the
   # customizations, below, to suit the needs/limits of your local machine.
   #
-  # Optimized for an Ubuntu 13.10 32-bit VM on a host running Windows XP SP3 32-bit
+  # Optimized for an Ubuntu 12.04 32-bit VM on a host running Windows XP SP3 32-bit
     # Set the amount of RAM, in MB, that the VM should allocate for itself, from the host
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
+    #vb.customize ["modifyvm", :id, "--memory", "1024"]
     # Allow the VM to display the desktop environment
-    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    #vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
     # Set the amount of RAM that the virtual graphics card should have
-    vb.customize ["modifyvm", :id, "--vram", "128"]
+    #vb.customize ["modifyvm", :id, "--vram", "64"]
     # Advanced Programmable Interrupt Controllers (APICs) are a newer x86 hardware feature
-    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    #vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Default host uses a USB mouse instead of PS2
-    vb.customize ["modifyvm", :id, "--mouse", "usb"]
+    #vb.customize ["modifyvm", :id, "--mouse", "usb"]
     # Enable audio support for the VM & specify the audio controller
-    vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
+    #vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
-    vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
+    #vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
     # Add IDE controller to the VM, to allow virtual media to be attached to the controller
-    vb.customize ["storagectl", :id, "--name", "IDE Controller", "--add", "ide"]
+    #vb.customize ["storagectl", :id, "--name", "IDE Controller", "--add", "ide"]
     # Give the VM access to the host's CD/DVD drive, by attaching the medium to the virtual IDE controller
-    vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
+    #vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
