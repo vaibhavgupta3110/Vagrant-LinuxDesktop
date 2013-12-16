@@ -35,7 +35,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
   config.ssh.forward_agent = true
-  config.ssh.forward_x11 = true
 
   # VirtualBox-specific configuration, to fine-tune various options; as
   # described in http://docs.vagrantup.com/v2/virtualbox/configuration.html
