@@ -5,7 +5,7 @@ By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) |
 
 ### This Project's Purpose
 
-To provide a simple way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
+To provide a _simple_  (not the only) way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
 
 ### Contributing
 
@@ -29,13 +29,15 @@ For many years, there were barriers surrounding the many unsatisfied Microsoft W
 
 Well, ladies 'n gentlemen ... drum roll, please ...
 
-## Meet Vagrant
-
-[Vagrant](http://www.vagrantup.com) is a cross-platform, open-source tool for building and distributing computing environments. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine (on your local Mac or Windows PC) that is sandboxed, or sectioned-off, from your local environment.
-
 ## Meet VirtualBox
 
-VirtualBox is also a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed _on_ an existing **host** operating system ("OS") &ndash; such as Windows or Mac OS X &ndash; as an application. While running as an application on your computer, VirtualBox then allows a **guest** OS to be loaded and run, within its own virtual environment. Thus, VirtualBox can be used to run a virtual Linux computer _inside_ your Mac or Windows PC, as opposed to next to it (like in a dual-boot configuration).
+VirtualBox is a cross-platform, open-source "[virtualization](https://www.virtualbox.org/wiki/Virtualization) product for enterprise as well as home use." VirtualBox is installed _on_ an existing **host** operating system ("OS") &ndash; such as Windows or Mac OS X &ndash; as an application, i.e. a VM. While running as an application/VM on your computer, VirtualBox then allows a **guest** OS to be loaded and run, within its own virtual environment. Thus, VirtualBox can be used to run a virtual Linux computer _inside_ your Mac or Windows PC, as opposed to next to it (such as in a dual-boot configuration).
+
+To deploy a VM on one's computer, the user must first create a VM within VirtualBox and properly configure the slew of possible options. While this is *really* not as difficult as it sounds, the prospect can seem daunting to non-computer-geeks. Such unfortunates are in luck, however.
+
+## Meet Vagrant
+
+[Vagrant](http://www.vagrantup.com) is also a cross-platform, open-source tool. After you install VirtualBox on your computer, Vagrant itself makes it so you do not need to deal with VirtualBox directly. Vagrant was created for software developers, so they could build and share computing environments with other developers. It works with [virtualization](http://en.wikipedia.org/wiki/X86_virtualization) software such as [VirtualBox](https://www.virtualbox.org/) to provide a virtual machine (on your local Mac or Windows PC) that is sandboxed, or sectioned-off, from your local environment.
 
 ### A Match Made in Heaven
 
@@ -61,6 +63,7 @@ Other possible VirtualBox configurations (although, outside the scope of this pr
 	>Once VirtualBox is installed, also install the corresponding [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads).
 
 1. Install the most recent release of [Vagrant](http://www.vagrantup.com/downloads.html), for your OS.
+
 	* `vagrant` will now be available as a command in your terminal or Windows Command Prompt.
 		* **Microsoft Windows users:** Can open a command prompt by pressing (on the keyboard) the `Windows` key followed by the `R` key, which will open the `Run` dialog box, and typing:
 
@@ -113,9 +116,9 @@ Now that you're up and running, start poking around and modifying things.
 
 ## Vagrant `box`
 
-One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process &ndash; Vagrant uses a base image to quickly clone a VM.
+One concept to be mindful of is Vagrant's use of [boxes](http://docs.vagrantup.com/v2/boxes.html). Vagrant uses `.box` files as templates from which to spin up a new VM. Instead of building a VM from scratch &ndash; which would be a slow and tedious process because you would first have to create a VM in VirtualBox and configure the proper settings &ndash; Vagrant uses a base, combined image of both a properly-configured VirtualBox VM with a guest OS already installed, to quickly clone a VM.
 
-An individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL of either of the official Vagrant boxes:
+Such an individual base image is referred to as a `box`. Feel free to swap-out the URL in the `config.vm.box_url` directive of this project's [Vagrantfile](http://docs.vagrantup.com/v2/vagrantfile/machine_settings.html) &ndash; that provides the default Ubuntu `box` &ndash; with the URL of either of the official Vagrant `box`es:
 
 * **Ubuntu 12.04 32-bit:** [http://files.vagrantup.com/precise32.box](http://files.vagrantup.com/precise32.box)
 * **Ubuntu 12.04 64-bit:** [http://files.vagrantup.com/precise64.box](http://files.vagrantup.com/precise64.box)
