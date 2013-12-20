@@ -5,7 +5,7 @@ By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) |
 
 ### This Project's Purpose
 
-To provide a _simple_  (not the only) way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
+To provide a _simple_  (while not the only) way for Windows &amp; Mac users to launch a virtual machine ("VM") with a Linux Desktop environment &ndash; sandboxed on their local computer.
 
 ### Contributing
 
