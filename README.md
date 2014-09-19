@@ -1,7 +1,7 @@
 Vagrant's Linux Desktop Environment for Windows &amp; Mac
 =
 
-By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) | [vDevices](http://vdevices.com/)
+By: [Pablo Carranza](https://plus.google.com/107285164064863645881?rel=author) | [vDevices](http://www.vdevices.com/)
 
 ### This Project's Purpose
 
