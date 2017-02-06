@@ -17,14 +17,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # either of the boxes provided, in favor of your own `vagrant box`).
   #
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu"
+  config.vm.box = "ubuntu/xenial64"
   #
   # The URL from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system. Sources of other Vagrant
   # boxes are provided in this Project's README.
   #
   # 32-bit Ubuntu 12.04 LTS
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
   #
   # 64-bit Ubuntu 12.04 LTS
   # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
@@ -60,25 +60,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Enable audio support for the VM & specify the audio controller
     #vb.customize ["modifyvm", :id, "--audio", "dsound", "--audiocontroller", "ac97"]
     # Enable the VM's virtual USB controller & enable the virtual USB 2.0 controller
-    #vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
+   vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
     # Add IDE controller to the VM, to allow virtual media to be attached to the controller
-    #vb.customize ["storagectl", :id, "--name", "IDE Controller", "--add", "ide"]
+   vb.customize ["storagectl", :id, "--name", "IDE Controller", "--add", "ide"]
     # Give the VM access to the host's CD/DVD drive, by attaching the medium to the virtual IDE controller
-    #vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
+   vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
-  # vb.customize ["modifyvm", :id, "--memory", "2048"]
+   vb.customize ["modifyvm", :id, "--memory", "2048"]
     # Set the number of virtual CPUs for the virtual machine
-  # vb.customize ["modifyvm", :id, "--cpus", "2"]
-  # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-  # vb.customize ["modifyvm", :id, "--vram", "128"]
+   vb.customize ["modifyvm", :id, "--cpus", "2"]
+   vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+   vb.customize ["modifyvm", :id, "--vram", "128"]
     # Enabling the I/O APIC is required for 64-bit guest operating systems, especially Windows Vista;
     # it is also required if you want to use more than one virtual CPU in a VM.
-  # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+   vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
-  # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+   vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
     # Enable, if Guest Additions are installed, whether hardware 3D acceleration should be available
-  # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+   vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   #
   # See Chapter 8. VBoxManage | VirtualBox Manual located @ virtualbox.org/manual/ch08.html
   # for more information on available options.
